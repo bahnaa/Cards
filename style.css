@@ -129,6 +129,7 @@ button.repeat-game.visible:hover {
 
     div.score p {
         font-size: 1.5rem;
+        margin: 0.5rem;
     }
 
     div.card-one,
