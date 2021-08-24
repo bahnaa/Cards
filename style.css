@@ -21,6 +21,9 @@ body {
     font-size: 2rem;
     text-align: right;
     padding: 0.75rem;
+}
+
+div.score {
     margin: 0 128px 0 128px;
 }
 
@@ -109,7 +112,7 @@ button.repeat-game.visible:hover {
     }
 }
 
-@media (max-width: 1117px) {
+@media (max-width: 918px) {
     body {
         flex-direction: column;
     }
