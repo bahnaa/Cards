@@ -55,10 +55,54 @@ div.score p {
     margin-left: 0.2rem;
 }
 
-/* .card-one:hover,
-.card-two:hover {
-    transform: translateY(-32px) scale(1.2);
-    border: 3px solid green;
-    box-shadow: 2px 2px 5px 0.5px green;
-    transition: 1s;
-} */
+.card-one.winner,
+.card-two.winner {
+    animation: winner;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.repeat-game {
+    display: none;
+}
+
+.repeat-game.visible {
+    display: block;
+    margin: auto;
+    margin-top: 16px;
+    height: 64px;
+    width: 160px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-variant: small-caps;
+    /* animation: playAgain;
+    animation-iteration-count: infinite;
+    animation-duration: 2s; */
+}
+
+@keyframes winner {
+    0% {
+        transform: translateY(0px) scale(1);
+        border: 3px solid black;
+        box-shadow: 2px 2px 5px 0.5px black;
+    }
+
+    50% {
+        transform: translateY(-32px) scale(1.2);
+        border: 3px solid green;
+        box-shadow: 2px 2px 5px 0.5px green;
+    }
+
+    65% {
+        border: 3px solid green;
+        box-shadow: 2px 2px 5px 0.5px green;
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+        border: 3px solid black;
+        box-shadow: 2px 2px 5px 0.5px black;
+    }
+}

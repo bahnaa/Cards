@@ -4,6 +4,7 @@ const cardOne = document.querySelector(".card-one");
 const cardTwo = document.querySelector(".card-two");
 let scoreCardOne = document.querySelector(".score-left");
 let scoreCardTwo = document.querySelector(".score-right");
+const playAgainBtn = document.querySelector(".repeat-game");
 
 scoreCardOne.textContent = 0;
 scoreCardTwo.textContent = 0;
@@ -85,6 +86,8 @@ function winner(one, two) {
             cardOne.style.border = "3px solid green";
             cardOne.style.transform = "translateY(-32px) scale(1.2)";
             cardOne.style.transition = "1s";
+            playAgainBtn.classList.add("visible");
+            cardOne.classList.add("winner")
         }
     if(+scoreCardTwo.textContent===3) {
             window.removeEventListener("keydown", spaceStartHandler);
@@ -92,6 +95,8 @@ function winner(one, two) {
             cardTwo.style.border = "3px solid green";
             cardTwo.style.transform = "translateY(-32px) scale(1.2)";
             cardTwo.style.transition = "1s";
+            playAgainBtn.classList.add("visible");
+            cardTwo.classList.add("winner")
         }
 }
 
@@ -101,4 +106,7 @@ function spaceStartHandler(e) {
     }
 }
 
-window.addEventListener("keydown", spaceStartHandler); 
+window.addEventListener("keydown", spaceStartHandler);
+playAgainBtn.addEventListener("click", () => {
+    location.reload();
+});
