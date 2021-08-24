@@ -64,23 +64,41 @@ function scoreCounter(one, two) {
     chosenCardOne = one;
     chosenCardTwo = two;
     if(+chosenCardOne>+chosenCardTwo) {
-        // setTimeout(() => {
         scoreCardOne.textContent++;
         scoreCardOne.style.transform="scale(1.3)";
         scoreCardTwo.style.transform="scale(1)";
-        // }, 300);
+        winner(chosenCardOne, chosenCardTwo);
     } else if (+chosenCardOne<+chosenCardTwo) {
-        // setTimeout(() => {
-        const x = +scoreCardOne.textContent;
         scoreCardTwo.textContent++
         scoreCardOne.style.transform="scale(1)";
         scoreCardTwo.style.transform="scale(1.3)";
-        // }, 300);
+        winner(chosenCardOne, chosenCardTwo);
     }
 }
 
-window.addEventListener("keydown", (e) => {
+function winner(one, two) {
+    chosenCardOne = one;
+    chosenCardTwo = two;
+    if(+scoreCardOne.textContent===3 ) {
+            window.removeEventListener("keydown", spaceStartHandler);
+            cardOne.style.boxShadow = "2px 2px 5px 0.5px green";
+            cardOne.style.border = "3px solid green";
+            cardOne.style.transform = "translateY(-32px) scale(1.2)";
+            cardOne.style.transition = "1s";
+        }
+    if(+scoreCardTwo.textContent===3) {
+            window.removeEventListener("keydown", spaceStartHandler);
+            cardTwo.style.boxShadow = "2px 2px 5px 0.5px green";
+            cardTwo.style.border = "3px solid green";
+            cardTwo.style.transform = "translateY(-32px) scale(1.2)";
+            cardTwo.style.transition = "1s";
+        }
+}
+
+function spaceStartHandler(e) {
     if(e.keyCode === 32) {
         render();
     }
-})
+}
+
+window.addEventListener("keydown", spaceStartHandler); 
