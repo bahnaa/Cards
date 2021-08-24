@@ -8,9 +8,6 @@ let scoreCardTwo = document.querySelector(".score-right");
 scoreCardOne.textContent = 0;
 scoreCardTwo.textContent = 0;
 
-// let chosenCardOne = cards[Math.ceil(Math.random()*52)-1];
-// let chosenCardTwo = cards[Math.ceil(Math.random()*52)-1];
-
 function render() {
     let chosenCardOne = cards[Math.ceil(Math.random()*52)-1];
     if(chosenCardOne.charAt(chosenCardOne.length-1)=="S") {
@@ -67,9 +64,18 @@ function scoreCounter(one, two) {
     chosenCardOne = one;
     chosenCardTwo = two;
     if(+chosenCardOne>+chosenCardTwo) {
+        // setTimeout(() => {
         scoreCardOne.textContent++;
-    } else if (chosenCardOne<chosenCardTwo) {
+        scoreCardOne.style.transform="scale(1.3)";
+        scoreCardTwo.style.transform="scale(1)";
+        // }, 300);
+    } else if (+chosenCardOne<+chosenCardTwo) {
+        // setTimeout(() => {
+        const x = +scoreCardOne.textContent;
         scoreCardTwo.textContent++
+        scoreCardOne.style.transform="scale(1)";
+        scoreCardTwo.style.transform="scale(1.3)";
+        // }, 300);
     }
 }
 
