@@ -78,7 +78,7 @@ function scoreCounter(one, two) {
 }
 
 function checkWinner() {
-    if(+scoreCardOne.textContent===3 ) {
+    if(+scoreCardOne.textContent===10 ) {
             window.removeEventListener("keydown", spaceStartHandler);
             cardOne.style.boxShadow = "2px 2px 5px 0.5px green";
             cardOne.style.border = "3px solid green";
@@ -88,7 +88,7 @@ function checkWinner() {
             cardOne.classList.add("winner")
             return;
         }
-    if(+scoreCardTwo.textContent===3) {
+    if(+scoreCardTwo.textContent===10) {
             window.removeEventListener("keydown", spaceStartHandler);
             cardTwo.style.boxShadow = "2px 2px 5px 0.5px green";
             cardTwo.style.border = "3px solid green";
