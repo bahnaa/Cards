@@ -54,3 +54,11 @@ div.score p {
     font-size: 1.7rem;
     margin-left: 0.2rem;
 }
+
+.card-one:hover,
+.card-two:hover {
+    transform: translateY(-32px) scale(1.2);
+    border: 3px solid green;
+    box-shadow: 2px 2px 5px 0.5px green;
+    transition: 1s;
+}

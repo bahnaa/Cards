@@ -8,6 +8,9 @@ let scoreCardTwo = document.querySelector(".score-right");
 scoreCardOne.textContent = 0;
 scoreCardTwo.textContent = 0;
 
+// let chosenCardOne = cards[Math.ceil(Math.random()*52)-1];
+// let chosenCardTwo = cards[Math.ceil(Math.random()*52)-1];
+
 function render() {
     let chosenCardOne = cards[Math.ceil(Math.random()*52)-1];
     if(chosenCardOne.charAt(chosenCardOne.length-1)=="S") {
@@ -29,6 +32,49 @@ function render() {
     } else {
         cardTwo.innerHTML = chosenCardTwo.substring(0, chosenCardTwo.length-1) + '<i class="fab fa-canadian-maple-leaf"></i>'
     };
+    valueSetter(chosenCardOne, chosenCardTwo);
 }
 
-render();
+function valueSetter(one, two) {
+    chosenCardOne = one;
+    chosenCardTwo = two;
+    if(chosenCardOne.includes("A")) {
+        chosenCardOne = 14;
+    } else if (chosenCardOne.includes("K")) {
+        chosenCardOne = 13;
+    } else if (chosenCardOne.includes("Q")) {
+        chosenCardOne = 12;
+    } else if (chosenCardOne.includes("J")) {
+        chosenCardOne = 11;
+    } else {
+        chosenCardOne = chosenCardOne.substring(0, chosenCardOne.length-1);
+    }
+    if(chosenCardTwo.includes("A")) {
+        chosenCardTwo = 14;
+    } else if (chosenCardTwo.includes("K")) {
+        chosenCardTwo = 13;
+    } else if (chosenCardTwo.includes("Q")) {
+        chosenCardTwo = 12;
+    } else if (chosenCardTwo.includes("J")) {
+        chosenCardTwo = 11;
+    } else {
+        chosenCardTwo = chosenCardTwo.substring(0, chosenCardTwo.length-1);
+    }
+    scoreCounter(chosenCardOne, chosenCardTwo);
+}
+
+function scoreCounter(one, two) {
+    chosenCardOne = one;
+    chosenCardTwo = two;
+    if(+chosenCardOne>+chosenCardTwo) {
+        scoreCardOne.textContent++;
+    } else if (chosenCardOne<chosenCardTwo) {
+        scoreCardTwo.textContent++
+    }
+}
+
+window.addEventListener("keydown", (e) => {
+    if(e.keyCode === 32) {
+        render();
+    }
+})
