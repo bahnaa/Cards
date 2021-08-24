@@ -68,18 +68,16 @@ function scoreCounter(one, two) {
         scoreCardOne.textContent++;
         scoreCardOne.style.transform="scale(1.3)";
         scoreCardTwo.style.transform="scale(1)";
-        winner(chosenCardOne, chosenCardTwo);
+        winner();
     } else if (+chosenCardOne<+chosenCardTwo) {
         scoreCardTwo.textContent++
         scoreCardOne.style.transform="scale(1)";
         scoreCardTwo.style.transform="scale(1.3)";
-        winner(chosenCardOne, chosenCardTwo);
+        winner();
     }
 }
 
-function winner(one, two) {
-    chosenCardOne = one;
-    chosenCardTwo = two;
+function winner() {
     if(+scoreCardOne.textContent===3 ) {
             window.removeEventListener("keydown", spaceStartHandler);
             cardOne.style.boxShadow = "2px 2px 5px 0.5px green";
