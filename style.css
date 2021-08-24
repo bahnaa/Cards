@@ -82,6 +82,11 @@ div.score p {
     animation-duration: 2s; */
 }
 
+.repeat-game.visible:hover {
+    background-color: rgb(24, 185, 38);
+    border: 2px solid green;
+}
+
 @keyframes winner {
     0% {
         transform: translateY(0px) scale(1);
