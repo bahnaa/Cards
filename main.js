@@ -13,17 +13,21 @@ function render() {
     if(chosenCardOne.charAt(chosenCardOne.length-1)=="S") {
         cardOne.innerHTML = chosenCardOne.substring(0, chosenCardOne.length-1) + '<i class="fas fa-heart"></i>';
     } else if(chosenCardOne.charAt(chosenCardOne.length-1)=="D") {
-        cardOne.innerHTML = chosenCardOne.substring(0, chosenCardOne.length-1) + '<i class="fas fa-square"></i>';}
-        else {
-        cardOne.innerHTML = chosenCardOne;
+        cardOne.innerHTML = chosenCardOne.substring(0, chosenCardOne.length-1) + '<i class="fas fa-square"></i>';
+    } else if(chosenCardOne.charAt(chosenCardOne.length-1)=="W") {
+        cardOne.innerHTML = chosenCardOne.substring(0, chosenCardOne.length-1) + '<i class="far fa-heart"></i>';
+    } else {
+        cardOne.innerHTML = chosenCardOne.substring(0, chosenCardOne.length-1) + '<i class="fab fa-canadian-maple-leaf"></i>'
     };
     let chosenCardTwo = cards[Math.ceil(Math.random()*52)-1];
     if(chosenCardTwo.charAt(chosenCardTwo.length-1)=="S") {
         cardTwo.innerHTML = chosenCardTwo.substring(0, chosenCardTwo.length-1) + '<i class="fas fa-heart"></i>';
     } else if(chosenCardTwo.charAt(chosenCardTwo.length-1)=="D") {
         cardTwo.innerHTML = chosenCardTwo.substring(0, chosenCardTwo.length-1) + '<i class="fas fa-square"></i>';}
-        else {
-        cardTwo.innerHTML = chosenCardTwo;
+        else if(chosenCardTwo.charAt(chosenCardTwo.length-1)=="W") {
+        cardTwo.innerHTML = chosenCardTwo.substring(0, chosenCardTwo.length-1) + '<i class="far fa-heart"></i>';
+    } else {
+        cardTwo.innerHTML = chosenCardTwo.substring(0, chosenCardTwo.length-1) + '<i class="fab fa-canadian-maple-leaf"></i>'
     };
 }
 

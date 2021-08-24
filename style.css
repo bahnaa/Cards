@@ -24,6 +24,12 @@ body {
     margin: 0 128px 0 128px;
 }
 
+div.score p {
+    display: inline-block;
+    font-size: 3rem;
+    margin: 16px;
+}
+
 .fas.fa-heart {
     color: red;
     font-size: 1.7rem;
@@ -32,13 +38,19 @@ body {
 
 .fas.fa-square {
     color: red;
-    transform: rotate(45deg);
-    margin-left: 0.4rem;
-    font-size: 1.5rem;
+    transform: rotate(45deg) translateY(-1.5px) translateX(-3px);
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+    vertical-align: middle;
 }
 
-p {
-    display: inline-block;
-    font-size: 3rem;
-    margin: 16px;
+.far.fa-heart {
+    font-size: 1.7rem;
+    margin-left: 0.2rem;
+    transform: rotate(180deg);
+}
+
+.fab.fa-canadian-maple-leaf {
+    font-size: 1.7rem;
+    margin-left: 0.2rem;
 }
