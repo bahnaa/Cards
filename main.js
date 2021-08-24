@@ -68,16 +68,16 @@ function scoreCounter(one, two) {
         scoreCardOne.textContent++;
         scoreCardOne.style.transform="scale(1.3)";
         scoreCardTwo.style.transform="scale(1)";
-        winner();
+        checkWinner();
     } else if (+chosenCardOne<+chosenCardTwo) {
         scoreCardTwo.textContent++
         scoreCardOne.style.transform="scale(1)";
         scoreCardTwo.style.transform="scale(1.3)";
-        winner();
+        checkWinner();
     }
 }
 
-function winner() {
+function checkWinner() {
     if(+scoreCardOne.textContent===3 ) {
             window.removeEventListener("keydown", spaceStartHandler);
             cardOne.style.boxShadow = "2px 2px 5px 0.5px green";
@@ -86,6 +86,7 @@ function winner() {
             cardOne.style.transition = "1s";
             playAgainBtn.classList.add("visible");
             cardOne.classList.add("winner")
+            return;
         }
     if(+scoreCardTwo.textContent===3) {
             window.removeEventListener("keydown", spaceStartHandler);
@@ -95,6 +96,7 @@ function winner() {
             cardTwo.style.transition = "1s";
             playAgainBtn.classList.add("visible");
             cardTwo.classList.add("winner")
+            return;
         }
 }
 
