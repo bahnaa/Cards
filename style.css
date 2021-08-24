@@ -62,11 +62,11 @@ div.score p {
     animation-iteration-count: infinite;
 }
 
-.repeat-game {
+button.repeat-game {
     display: none;
 }
 
-.repeat-game.visible {
+button.repeat-game.visible {
     display: block;
     margin: auto;
     margin-top: 16px;
@@ -77,12 +77,9 @@ div.score p {
     border: 1px solid black;
     cursor: pointer;
     font-variant: small-caps;
-    /* animation: playAgain;
-    animation-iteration-count: infinite;
-    animation-duration: 2s; */
 }
 
-.repeat-game.visible:hover {
+button.repeat-game.visible:hover {
     background-color: rgb(24, 185, 38);
     border: 2px solid green;
 }
@@ -109,5 +106,48 @@ div.score p {
         transform: translateY(0px) scale(1);
         border: 3px solid black;
         box-shadow: 2px 2px 5px 0.5px black;
+    }
+}
+
+@media (max-width: 1117px) {
+    body {
+        flex-direction: column;
+    }
+
+    button.repeat-game.visible {
+        height: 2rem;
+        width: 5rem;
+        font-size: 0.625rem;
+    }
+
+    div.score {
+        text-align: center;
+    }
+
+    div.score p {
+        font-size: 1.5rem;
+    }
+
+    div.card-one,
+    div.card-two {
+        height: 125px;
+        width: 100px;
+        margin: auto;
+        font-size: 1rem;
+    }
+
+    .fas.fa-heart,
+    .far.fa-heart,
+    .fab.fa-canadian-maple-leaf {
+        font-size: 0.85rem;
+    }
+
+    .far.fa-heart {
+        transform: rotate(180deg) translateY(0.125rem);
+    }
+
+    .fas.fa-square {
+        font-size: 0.7rem;
+        transform: rotate(45deg) translateX(-0.25rem);
     }
 }
