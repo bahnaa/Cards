@@ -15,6 +15,7 @@ body {
 .instruction {
     position: absolute;
     bottom: 70%;
+    left: 5%;
     font-size: 1.5rem;
     white-space: pre-line;
     text-align: center;
@@ -139,17 +140,17 @@ button.repeat-game.visible:hover {
         display: none;
     }
 
+    .instruction.mobile {
+        display: block;
+        position: static;
+        font-size: 0.75rem;
+    }
+
     .card-one {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .instruction.mobile {
-        display: block;
-        position: static;
-        font-size: 0.75rem;
     }
 
     button.repeat-game.visible {
