@@ -81,6 +81,7 @@ function scoreCounter(one, two) {
 function checkWinner() {
     if(+scoreCardOne.textContent===10 ) {
             window.removeEventListener("keydown", spaceStartHandler);
+            window.removeEventListener("touchstart", touchStartHandler);
             cardOne.style.boxShadow = "2px 2px 5px 0.5px green";
             cardOne.style.border = "3px solid green";
             cardOne.style.transform = "translateY(-32px) scale(1.2)";
@@ -91,6 +92,7 @@ function checkWinner() {
         }
     if(+scoreCardTwo.textContent===10) {
             window.removeEventListener("keydown", spaceStartHandler);
+            window.removeEventListener("touchstart", touchStartHandler);
             cardTwo.style.boxShadow = "2px 2px 5px 0.5px green";
             cardTwo.style.border = "3px solid green";
             cardTwo.style.transform = "translateY(-32px) scale(1.2)";
@@ -111,7 +113,16 @@ function spaceStartHandler(e) {
     }
 }
 
+function touchStartHandler() {
+    for (const instr of instruction) {
+            instr.style.display="none";
+        }
+        cardOne.style.display="block";
+        render();
+}
+
 window.addEventListener("keydown", spaceStartHandler);
+window.addEventListener("touchstart", touchStartHandler);
 playAgainBtn.addEventListener("click", () => {
     location.reload();
 });
