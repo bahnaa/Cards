@@ -14,7 +14,7 @@ body {
 
 .instruction {
     position: absolute;
-    top: 35%;
+    bottom: 70%;
     font-size: 1.5rem;
     white-space: pre-line;
     text-align: center;
@@ -37,6 +37,9 @@ body {
 
 div.score {
     margin: 0 128px 0 128px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 div.score p {
