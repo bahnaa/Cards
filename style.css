@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
 html {
     height: 100%;
 }
@@ -8,6 +10,16 @@ body {
     align-items: center;
     height: 100%;
     overflow: hidden;
+}
+
+.instruction {
+    position: absolute;
+    top: 35%;
+    font-size: 1.5rem;
+    white-space: pre-line;
+    text-align: center;
+    color: rgb(85, 85, 85);
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .card-one,
@@ -21,6 +33,7 @@ body {
     font-size: 2rem;
     text-align: right;
     padding: 0.75rem;
+    font-weight: lighter;
 }
 
 div.score {
