@@ -5,7 +5,7 @@ const cardTwo = document.querySelector(".card-two");
 let scoreCardOne = document.querySelector(".score-left");
 let scoreCardTwo = document.querySelector(".score-right");
 const playAgainBtn = document.querySelector(".repeat-game");
-const instruction = document.querySelector(".instruction");
+const instruction = document.querySelectorAll(".instruction");
 
 scoreCardOne.textContent = 0;
 scoreCardTwo.textContent = 0;
@@ -103,7 +103,10 @@ function checkWinner() {
 
 function spaceStartHandler(e) {
     if(e.keyCode === 32) {
-        instruction.style.display="none";
+        for (const instr of instruction) {
+            instr.style.display="none";
+        }
+        cardOne.style.display="block";
         render();
     }
 }

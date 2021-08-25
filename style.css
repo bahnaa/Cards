@@ -22,6 +22,10 @@ body {
     font-family: "Source Sans Pro", sans-serif;
 }
 
+.instruction.mobile {
+    display: none;
+}
+
 .card-one,
 .card-two {
     box-sizing: border-box;
@@ -38,8 +42,6 @@ body {
 div.score {
     margin: 0 128px 0 128px;
     position: relative;
-    display: flex;
-    justify-content: center;
 }
 
 div.score p {
@@ -95,6 +97,7 @@ button.repeat-game.visible {
     border: 1px solid black;
     cursor: pointer;
     font-variant: small-caps;
+
 }
 
 button.repeat-game.visible:hover {
@@ -130,6 +133,23 @@ button.repeat-game.visible:hover {
 @media (max-width: 918px) {
     body {
         flex-direction: column;
+    }
+
+    .instruction {
+        display: none;
+    }
+
+    .card-one {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .instruction.mobile {
+        display: block;
+        position: static;
+        font-size: 0.75rem;
     }
 
     button.repeat-game.visible {
